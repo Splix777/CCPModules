@@ -41,6 +41,7 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@echo "$(RED)$(CHECKMARK) $(NAME) removed.$(RESET)"
+	@$(RM) Garden_shrubbery
 
 re: fclean all
 
