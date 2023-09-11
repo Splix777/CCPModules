@@ -1,5 +1,13 @@
 #include "Serialization.hpp"
 
+Serializer::Serializer()
+{
+}
+
+Serializer::~Serializer()
+{
+}
+
 // Function: serialize
 // Converts a pointer to a `Data` object into an unsigned integer value (uintptr_t).
 // This function simulates serialization by converting the memory address of the object into
