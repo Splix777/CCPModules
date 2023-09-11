@@ -10,7 +10,7 @@ int main() {
     Bureaucrat highGradeBureaucrat("HighGrade", 1);
     Bureaucrat lowGradeBureaucrat("LowGrade", 50);
     std::cout << std::endl;
-    // Create forms
+    // Create forms directly
     ShrubberyCreationForm shrubberyForm("Garden");
     RobotomyRequestForm robotomyForm("John Doe");
     PresidentialPardonForm pardonForm("Some Criminal");
@@ -26,13 +26,13 @@ int main() {
     AForm *pardonFormByIntern = someRandomIntern.makeForm("PresidentialPardonForm", "Some Criminal");
     AForm *wrongForm = someRandomIntern.makeForm("NonExistantForm", "Intern");
     std::cout << std::endl;
-    // Attempt to execute forms with bureaucrats
+    // Attempt to sign/execute forms with bureaucrats
     try {
         highGradeBureaucrat.signForm(shrubberyForm);
         highGradeBureaucrat.signForm(robotomyForm);
         highGradeBureaucrat.signForm(pardonForm);
 
-        // Fix the signForm call for wrongForm
+        // Try to sign a form that doesn't exist
         if (wrongForm)
             highGradeBureaucrat.signForm(*wrongForm);
 
@@ -40,7 +40,7 @@ int main() {
         highGradeBureaucrat.executeForm(robotomyForm);
         highGradeBureaucrat.executeForm(pardonForm);
 
-        // Execute forms created by Intern
+        // Try to execute forms created by the intern to show they're different than the ones created directly
         if (shrubberyFormByIntern)
             highGradeBureaucrat.executeForm(*shrubberyFormByIntern);
         if (robotomyFormByIntern)
