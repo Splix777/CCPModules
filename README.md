@@ -1,6 +1,4 @@
-# CPP-Modules | 42 Madrid
-
-*Lots of basic stuff 🗒*
+# CPP-Modules
 
 <div align="center">
   <img src=https://user-images.githubusercontent.com/40824677/149224059-8a1fc9f2-31bc-4335-93b3-6017bf794668.png />
