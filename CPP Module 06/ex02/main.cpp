@@ -108,8 +108,6 @@ static void identify(Base& p)
 
 int main()
 {
-    srand(time(NULL)); // Seed the random number generator
-
     // Loop to generate and test instances 4 of A, B, and C
     for (int j = 0; j < 5; j++)
     {
