@@ -159,8 +159,14 @@ void    printFloat(const std::string &literal)
     else
         std::cout << "int: " << i << std::endl;
     std::cout.precision(10);
-    std::cout << "float: " << f << ".0f" << std::endl;
-    std::cout << "double: " << d << ".0" << std::endl;
+    if (f - floorf(f) == 0)
+        std::cout << "float: " << f << ".0f" << std::endl;
+    else
+        std::cout << "float: " << f << "f" << std::endl;
+    if (d - floor(d) == 0)
+        std::cout << "double: " << d << ".0" << std::endl;
+    else
+        std::cout << "double: " << d << std::endl;
 }
 
 void    printDouble(const std::string &literal)
@@ -182,8 +188,14 @@ void    printDouble(const std::string &literal)
     else
         std::cout << "int: " << i << std::endl;
     std::cout.precision(10);
-    std::cout << "float: " << f << "f" << std::endl;
-    std::cout << "double: " << d << std::endl;
+    if (f - floorf(f) == 0)
+        std::cout << "float: " << f << ".0f" << std::endl;
+    else
+        std::cout << "float: " << f << "f" << std::endl;
+    if (d - floor(d) == 0)
+        std::cout << "double: " << d << ".0" << std::endl;
+    else
+        std::cout << "double: " << d << std::endl;
 }
 
 void    printSpecialF(const std::string &literal)
