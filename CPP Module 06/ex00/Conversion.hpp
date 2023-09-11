@@ -8,6 +8,7 @@
 # include <string>
 # include <math.h>
 
+// Enum to determine the type of the literal
 typedef enum e_type
 {
     CHAR,
@@ -31,28 +32,13 @@ class ScalarConverter
         static bool isInt(const std::string &literal);
         static bool isFloat(const std::string &literal);
         static bool isDouble(const std::string &literal);
-
-    public:
-        // Constructors and destructor
+        // Constructors and destructor (private to prevent stack allocation)
         ScalarConverter();
         ~ScalarConverter();
+
+    public:
         // Static method for conversion
         static void convert(const std::string &literal);
-        // Exceptions
-        class ImpossibleException : public std::exception
-        {
-            virtual const char* what() const throw()
-            {
-                return ("impossible");
-            }
-        };
-        class NonDisplayableException : public std::exception
-        {
-            virtual const char* what() const throw()
-            {
-                return ("Non displayable");
-            }
-        };
 };
 
 void    printChar(const std::string &literal);
@@ -61,6 +47,6 @@ void    printFloat(const std::string &literal);
 void    printDouble(const std::string &literal);
 void    printSpecialF(const std::string &literal);
 void    printSpecialD(const std::string &literal);
-void    printUnkown(const std::string &literal);
+void    printUnknown(const std::string &literal);
 
 #endif
