@@ -77,38 +77,40 @@ static void identify(Base* p)
 // Function to identify the type using Base reference
 static void identify(Base& p)
 {
-	try
-	{
-		A ptr;
+    try
+    {
+        A ptr;
 
-		ptr = dynamic_cast<A &>(p);
-		std::cout << "A" << std::endl;
-	}
+        ptr = dynamic_cast<A &>(p);
+        std::cout << "A" << std::endl;
+    }
     catch (const std::exception& e)
     {}
-	try
-	{
-		B ptr;
+    try
+    {
+        B ptr;
 
-		ptr = dynamic_cast<B &>(p);
-		std::cout << "B" << std::endl;
-	}
+        ptr = dynamic_cast<B &>(p);
+        std::cout << "B" << std::endl;
+    }
     catch (const std::exception& e)
     {}
-	try
-	{
-		C ptr;
+    try
+    {
+        C ptr;
 
-		ptr = dynamic_cast<C &>(p);
-		std::cout << "C" << std::endl;
-	}
+        ptr = dynamic_cast<C &>(p);
+        std::cout << "C" << std::endl;
+    }
     catch (const std::exception& e)
     {}
 }
 
 int main()
 {
-    // Loop to generate and test instances 4 of A, B, and C
+    srand(time(NULL)); // Seed the random number generator
+    
+    // Loop to generate and test instances 5 of A, B, and C
     for (int j = 0; j < 5; j++)
     {
         Base* Test = generate(); // Generate a random instance of A, B, or C
