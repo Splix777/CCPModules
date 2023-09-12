@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:51:14 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:51:21 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:00:35 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
     int level = complainLevel(logLevel);
     if (level == -1)
     {
-        std::cout << "Invalid complaint level!" << std::endl;
+        std::cout << "Probably complaining about insignificant problems" << std::endl;
         return (1);
     }
     while (level < 4)
