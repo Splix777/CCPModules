@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fsalazar <fsalazar@student.42madrid.com:>  +#+  +:+       +#+         #
+#    By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 14:45:04 by fsalazar          #+#    #+#              #
-#    Updated: 2023/09/12 14:45:07 by fsalazar         ###   ########.fr        #
+#    Updated: 2023/09/12 16:42:17 by fsalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 
 SRC =	main.cpp \
 		Zombie.cpp \
-		zombieHorde.cpp
+		ZombieHorde.cpp
 
 OBJ_DIR = OBJ
 

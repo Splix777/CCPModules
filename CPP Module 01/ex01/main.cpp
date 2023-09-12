@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsalazar <fsalazar@student.42madrid.com:>  +#+  +:+       +#+        */
+/*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:46:07 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:46:08 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:42:12 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
