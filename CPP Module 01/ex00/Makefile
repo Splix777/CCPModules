@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fsalazar <fsalazar@student.42madrid.com:>  +#+  +:+       +#+         #
+#    By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 14:44:07 by fsalazar          #+#    #+#              #
-#    Updated: 2023/09/12 14:44:09 by fsalazar         ###   ########.fr        #
+#    Updated: 2023/09/12 16:38:42 by fsalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ RM = rm -f
 
 SRC =	main.cpp \
 		Zombie.cpp \
-		newZombie.cpp \
-		randomChump.cpp
+		NewZombie.cpp \
+		RandomChump.cpp
 
 OBJ_DIR = OBJ
 
