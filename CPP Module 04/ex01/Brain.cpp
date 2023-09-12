@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/12 14:57:35 by fsalazar          #+#    #+#             */
+/*   Updated: 2023/09/12 14:57:36 by fsalazar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Brain.hpp"
 
 Brain::Brain()
@@ -14,7 +26,7 @@ Brain::Brain(const Brain &copy)
 		this->ideas[i] = copy.ideas[i];
 }
 
-Brain& Brain::operator=(const Brain &copy)
+Brain& Brain::opersator=(const Brain &copy)
 {
 	if (this != &copy) {
 		delete[] this->ideas;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/12 14:56:48 by fsalazar          #+#    #+#             */
+/*   Updated: 2023/09/12 14:56:51 by fsalazar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 #include "Animal.hpp"
 
@@ -14,7 +26,7 @@ Cat::~Cat()
 
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
-    this->_type = copy._type;
+    this->_type =s copy._type;
     std::cout << "A Cat was copied!" << std::endl;
 
 }

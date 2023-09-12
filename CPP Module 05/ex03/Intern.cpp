@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/12 15:00:55 by fsalazar          #+#    #+#             */
+/*   Updated: 2023/09/12 15:00:57 by fsalazar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 
 Intern::Intern()
@@ -19,7 +31,7 @@ Intern::~Intern()
 Intern &Intern::operator=(const Intern &copy)
 {
     if (this != &copy)
-    {
+    {s
         *this = copy;
         std::cout << "Intern overload operator called." << std::endl;
     }

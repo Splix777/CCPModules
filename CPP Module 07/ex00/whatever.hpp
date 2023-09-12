@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/12 15:04:10 by fsalazar          #+#    #+#             */
+/*   Updated: 2023/09/12 15:04:11 by fsalazar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Define a guard to prevent multiple inclusion of the header
 #ifndef WHATEVER_HPP
 # define WHATEVER_HPP
