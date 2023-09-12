@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsalazar <fsalazar@student.42madrid.com:>  +#+  +:+       +#+        */
+/*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:44:25 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:44:27 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:36:18 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
