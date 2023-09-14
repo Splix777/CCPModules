@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:57:55 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:57:56 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 13:26:32 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,11 @@ int main()
 	std::cout << "-----------------------------------" << std::endl;
 	std::cout << dog->getBrain()->getIdea(0) << std::endl;
 	std::cout << dog->getBrain()->getIdea(1) << std::endl;
+	std::cout << dog->getBrain() << std::endl;
 	std::cout << "-----------------------------------" << std::endl;
 	std::cout << dog2->getBrain()->getIdea(0) << std::endl;
 	std::cout << dog2->getBrain()->getIdea(1) << std::endl;
+	std::cout << dog2->getBrain() << std::endl;
 	std::cout << "-----------------------------------" << std::endl;
 	delete dog;
 	delete dog2;
