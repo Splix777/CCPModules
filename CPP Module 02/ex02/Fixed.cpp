@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:52:40 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:54:03 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:26:16 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Fixed::Fixed(const float num)
 {
     //std::cout << "Float constructor called" << std::endl;
     _fpn = roundf(num * (1 << fractional_bits));
+    // We use roundf() to round the float to the nearest integer value since _fpn is an integer.
 }
 
 Fixed::Fixed(const Fixed &other) : _fpn(other._fpn) // Copy constructor copies the value from another object.
@@ -47,15 +48,8 @@ int Fixed::getRawBits() const // Member function to get the raw value of the fix
 
 void Fixed::setRawBits(int const raw)
 {
-    if (raw >= 0) // Adding a basic validation check
-    {
-        //std::cout << "setRawBits member function called" << std::endl;
-        _fpn = raw;
-    }
-    else
-    {
-        std::cerr << "Error: Cannot set raw bits with a negative value" << std::endl;
-    }
+    //std::cout << "setRawBits member function called" << std::endl;
+    _fpn = raw;
 }
 
 float   Fixed::toFloat( void ) const

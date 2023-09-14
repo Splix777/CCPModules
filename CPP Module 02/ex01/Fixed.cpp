@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:52:23 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:52:36 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:22:38 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,9 @@ int Fixed::getRawBits() const // Member function to get the raw value of the fix
 
 void Fixed::setRawBits(int const raw)
 {
-    if (raw >= 0) // Adding a basic validation check
-    {
-        std::cout << "setRawBits member function called" << std::endl;
-        _fpn = raw;
-    }
-    else
-    {
-        std::cerr << "Error: Cannot set raw bits with a negative value" << std::endl;
-    }
+
+    std::cout << "setRawBits member function called" << std::endl;
+    _fpn = raw;
 }
 
 float   Fixed::toFloat( void ) const

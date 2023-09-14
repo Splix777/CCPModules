@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:54:47 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:54:49 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:40:16 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@ int main(void)
     Bobby.takeDamage(9);
     std::cout << std::endl;
     Bobby.beRepaired(100);
+    Bobby.attack("NPC");
+    Bobby.attack("NPC");
+    Bobby.attack("NPC");
+    Bobby.attack("NPC");
+    Bobby.attack("NPC");
+    Bobby.attack("NPC");
+    Bobby.attack("NPC");
+    // Bobby.attack("NPC");
+
     std::cout << std::endl;
     Bobby.takeDamage(100);
     std::cout << std::endl;

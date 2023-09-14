@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:54:44 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:54:45 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:36:42 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ public:
     unsigned int getMaxEP();
     unsigned int getMaxAD();
 
-protected:
+private:
     // Name
     std::string _Name;
     // Stats

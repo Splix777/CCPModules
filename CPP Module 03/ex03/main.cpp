@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:56:20 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:56:21 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:45:44 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main()
     
     std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
     {
-        std::cout << "\033[34mConstruct"_scav_name"ing\033[0m" << std::endl;
+        std::cout << "\033[34mConstructing\033[0m" << std::endl;
         FragTrap a;
         FragTrap b("Chadd");
 

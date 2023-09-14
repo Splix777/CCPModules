@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:52:46 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:52:50 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:29:11 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,58 @@
 
 int main( void )
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+	{
+		Fixed a;
+		Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+		std::cout << a << std::endl;
+		std::cout << ++a << std::endl;
+		std::cout << a << std::endl;
+		std::cout << a++ << std::endl;
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << Fixed::max( a, b ) << std::endl;
+
+		Fixed c;
+
+		// for (int i = 0; i < 257; i++)
+		// {
+		// 	std::cout << c << std::endl;
+		// 	c++;
+		// }
+		std::cout << Fixed::max( a, c ) << std::endl;
+		std::cout << Fixed::min( a, c ) << std::endl;
+		std::cout << "A is bigger than C? " << (a > c) << std::endl;
+		std::cout << "A is smaller than C? " << (a < c) << std::endl;
+		std::cout << a + c << std::endl;
+	}
+	std::cout << std::endl;
+	{
+		Fixed a;
+		a.setRawBits(-1);
+		Fixed const b( Fixed( -5.05f ) * Fixed( 2 ) );
+		std::cout << a << std::endl;
+		std::cout << ++a << std::endl;
+		std::cout << a << std::endl;
+		std::cout << a++ << std::endl;
+		std::cout << a << std::endl;
+		std::cout << b << std::endl;
+		std::cout << Fixed::max( a, b ) << std::endl;
+
+		Fixed c;
+
+		// for (int i = 0; i < 257; i++)
+		// {
+		// 	std::cout << c << std::endl;
+		// 	c++;
+		// }
+		std::cout << Fixed::max( a, c ) << std::endl;
+		std::cout << Fixed::min( a, c ) << std::endl;
+		std::cout << "A is bigger than C? " << (a > c) << std::endl;
+		std::cout << "A is smaller than C? " << (a < c) << std::endl;
+		std::cout << a + c << std::endl;
+	}
+	return (0);
 }
-
-// Personal Mainn
-
-// int main(void)
-// {
-// 	Fixed		a;
-// 	Fixed const	b(Fixed(5.05f) * Fixed(2));
-	
-// 	std::cout << a << std::endl;
-// 	std::cout << ++a << std::endl;
-// 	std::cout << a << std::endl;
-// 	std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-//     std::cout << a++ << std::endl;
-// 	std::cout << a << std::endl;
-// 	std::cout << b << std::endl;
-// 	std::cout << Fixed::max(a, b) << std::endl;
-
-//     return (0);
-// }
 
 /*
 Let's walk through what's happening:

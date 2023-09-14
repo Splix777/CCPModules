@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:51:57 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:52:11 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/13 17:28:53 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Fixed &Fixed::operator=(const Fixed &other) // Copy assignment operator overload
     std::cout << "Copy assignment operator called" << std::endl;
     if (this == &other) // Check for self-assignment
         return (*this);
-
     _fpn = other._fpn;
     return (*this);
 }
