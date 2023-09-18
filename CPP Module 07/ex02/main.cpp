@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:30 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:04:30 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:16:31 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,21 @@ int main() {
         // Test default constructor
         Array<int> arr1;
         std::cout << "arr1 size: " << arr1.size() << std::endl;
+        arr1 = Array<int>(5);
+        arr1[0] = 'a';
+        arr1[1] = 'b';
+        arr1[2] = 'c';
+        arr1[3] = 'd';
+        arr1[4] = 'e';
+        // arr1[5] = 'f';
+        std::cout << "arr1 size: " << arr1.size() << std::endl;
+        for (unsigned int i = 0; i < arr1.size(); ++i)
+        {
+            std::cout << arr1[i] << " ";
+        }
     } catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
-    return 0;
+    return (0);
 }

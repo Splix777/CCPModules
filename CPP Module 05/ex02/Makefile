@@ -6,7 +6,7 @@
 #    By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 14:59:59 by fsalazar          #+#    #+#              #
-#    Updated: 2023/09/12 15:00:00 by fsalazar         ###   ########.fr        #
+#    Updated: 2023/09/18 17:25:17 by fsalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ clean:
 fclean: clean
 	@$(RM) $(NAME)
 	@echo "$(RED)$(CHECKMARK) $(NAME) removed.$(RESET)"
+	@$(RM) Garden_shrubbery
 
 re: fclean all
 

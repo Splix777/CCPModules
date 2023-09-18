@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:45 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:04:45 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:21:59 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main()
         for (int i = 0; i < 5; ++i)
             myDeque.push_back(i * 4);
         // We search for the value 15 which is not in the deque, so the function should throw an exception.
-        valueToFind = 15;
+        valueToFind = 4;
         std::deque<int>::iterator dequeResult = easyfind(myDeque, valueToFind);
         if (dequeResult != myDeque.end())
             std::cout << "Value " << valueToFind << " found in deque at position " << std::distance(myDeque.begin(), dequeResult) << std::endl;

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:51 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:04:51 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:28:30 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(void)
         spAssigned = spCopy;
         
         // Test filling a large span and checking spans
-        Span sp1 = Span(100000);
+        Span sp1 = Span(1000000);
         sp1.fill();
         std::cout << "Shortest span (large span): " << sp1.shortestSpan() << std::endl;
         std::cout << "Longest span (large span): " << sp1.longestSpan() << std::endl;

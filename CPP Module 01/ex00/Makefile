@@ -6,7 +6,7 @@
 #    By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 14:44:07 by fsalazar          #+#    #+#              #
-#    Updated: 2023/09/12 16:38:42 by fsalazar         ###   ########.fr        #
+#    Updated: 2023/09/15 18:21:33 by fsalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = Brainz
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 RM = rm -f
 

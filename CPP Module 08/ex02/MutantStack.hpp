@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:21 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:05:21 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:33:29 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define MUTANTSTACK_HPP
 
 #include <stack>       // Include the standard stack container header.
+#include <list>        // Include the standard list container header.
 #include <iterator>    // Include the iterator header.
 #include <iostream>    // Include the input-output stream header.
 

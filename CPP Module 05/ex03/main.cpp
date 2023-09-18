@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:01:41 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:01:42 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:39:48 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,16 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-int main() {
+int main()
+{
+
+    // Intern someRandomIntern;
+    // AForm* rrf;
+    // rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
+
+
+
+    
     // Create bureaucrats
     Bureaucrat highGradeBureaucrat("HighGrade", 1);
     Bureaucrat lowGradeBureaucrat("LowGrade", 50);
@@ -68,5 +77,5 @@ int main() {
     delete robotomyFormByIntern;
     delete pardonFormByIntern;
 
-    return 0;
+    return (0);
 }

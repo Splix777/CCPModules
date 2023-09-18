@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:59:57 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:59:57 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:28:50 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,25 @@
 #include "PresidentialPardonForm.hpp"
 
 int main() {
+    // Try making creating abstract class
+    // AForm form;
     // Create bureaucrats
     Bureaucrat highGradeBureaucrat("HighGrade", 1);
     Bureaucrat lowGradeBureaucrat("LowGrade", 50);
+    Bureaucrat highGradeBureaucratCopy(highGradeBureaucrat);
+
+    std::cout << highGradeBureaucrat << std::endl;
+    std::cout << lowGradeBureaucrat << std::endl;
+    std::cout << highGradeBureaucratCopy << std::endl;
 
     // Create forms
     ShrubberyCreationForm shrubberyForm("Garden");
     RobotomyRequestForm robotomyForm("John Doe");
     PresidentialPardonForm pardonForm("Some Criminal");
+
+    std::cout << shrubberyForm << std::endl;
+    std::cout << robotomyForm << std::endl;
+    std::cout << pardonForm << std::endl;
 
     // Attempt to execute forms with bureaucrats
     try {

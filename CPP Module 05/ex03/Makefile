@@ -6,7 +6,7 @@
 #    By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/12 15:01:05 by fsalazar          #+#    #+#              #
-#    Updated: 2023/09/12 15:01:07 by fsalazar         ###   ########.fr        #
+#    Updated: 2023/09/18 17:40:46 by fsalazar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
 RED = \033[0;31m
-RESET = \033[0mss
+RESET = \033[0m
 CHECKMARK = ✔
 
 all: $(NAME)

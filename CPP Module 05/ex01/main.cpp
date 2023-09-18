@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:59:25 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:59:25 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:13:43 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,24 @@ int main()
 
     try
     {
-        form1.beSigned(bureaucrat1);
-        form1.beSigned(bureaucrat1);
         // form2.beSigned(bureaucrat2);
+        form1.beSigned(bureaucrat1);
+        form1.beSigned(bureaucrat1);
 
         bureaucrat1.signForm(form1);
         bureaucrat1.signForm(form2);
         bureaucrat2.signForm(form1);
+        
+        std::cout << std::endl;
+        
+        std::cout << form1 << std::endl;
+        std::cout << form2 << std::endl;
     }
     catch (std::exception &e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
     std::cout << std::endl;
-    std::cout << form1 << std::endl;
-    std::cout << form2 << std::endl;
 
     return (0);
 }

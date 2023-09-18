@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:08 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:05:09 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:23:12 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Span
 {
     private:
-        // Vector Container - We used a vector because it is a dynamic container that can be resized and is faster than a list for random access.
+        // Vector Container - Used a vector because it is a dynamic container that can be resized and is faster than a list for random access.
         std::vector<int>    vector;
         // Attributes
         unsigned int        size;

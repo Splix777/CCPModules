@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:44:42 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 16:41:18 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/15 18:22:21 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
     }
     Zombie *zombie;
 
-    zombie = newZombie("Zombie1");
+    zombie = newZombie("Bob");
     zombie->announce();
     delete zombie;
     randomChump("Random Zombie");

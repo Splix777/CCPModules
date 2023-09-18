@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:30 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:05:30 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 18:47:14 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void BitcoinExchange::printExchangeRates(const std::string &file) const
                 // Decrement key
                 --key;
                 // Reassign it to the new key
-                it = data.find(key); 
+                it = data.find(key);
             }
             // If key(date) is found, print the exchange rate
             if (it != data.end())
@@ -267,7 +267,8 @@ struct tm *BitcoinExchange::getTime() const
     if (time(&currentTime) == -1)
         throw std::runtime_error("Error: could not get current time.");
     // Convert the current time to a tm struct. localtime() returns NULL if it fails
-    if (timeInfo = localtime(&currentTime) == NULL)
+    timeInfo = localtime(&currentTime);
+    if (timeInfo == NULL)
         throw std::runtime_error("Error: could not convert current time to tm struct.");
     // Return a pointer to the tm struct
     return (timeInfo);

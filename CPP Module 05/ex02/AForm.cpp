@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:59:37 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:59:38 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:23:48 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ bool    AForm::getSignedStatus() const
 
 void AForm::beSigned(Bureaucrat &bureaucrat)
 {
-	if ((int)bureaucrat.getGrade() > this->getGradeToSign())
+    if (this->getSignedStatus() == true)
+        std::cout << this->getName() << " AForm is already signed" << std::endl;
+	else if ((int)bureaucrat.getGrade() > this->getGradeToSign())
     {
 		std::cout << bureaucrat.getName() << " couldn't sign " << this->getName() << " because ";
         throw(Bureaucrat::GradeTooLowException());
@@ -75,8 +77,6 @@ void AForm::beSigned(Bureaucrat &bureaucrat)
 		this->_signed = true;
 		std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl;
 	}
-	else
-		std::cout << this->getName() << " AForm is already signed" << std::endl;
 }
 
 const char  *AForm::GradeTooLowException::what() const throw()
