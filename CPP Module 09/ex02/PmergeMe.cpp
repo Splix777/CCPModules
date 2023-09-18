@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:06:11 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:04:11 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ void PmergeMe::displayContainers()
     // Print unsorted container if it has less than 5 elements
     if (_unsorted.size() <= 5)
     {
-        for (typename std::deque<int>::iterator it = _unsorted.begin(); it != _unsorted.end(); ++it)
+        for ( std::deque<int>::iterator it = _unsorted.begin(); it != _unsorted.end(); ++it)
         {
             std::cout << " " << *it;
         }
@@ -188,7 +188,7 @@ void PmergeMe::displayContainers()
     // Print the first 5 elements of the unsorted container and then print [...]
     else
     {
-        typename std::deque<int>::iterator it = _unsorted.begin();
+         std::deque<int>::iterator it = _unsorted.begin();
         for (i = 0; i < 5; i++)
         {
             std::cout << " " << *it;
@@ -202,7 +202,7 @@ void PmergeMe::displayContainers()
     // Print sorted container if it has less than 5 elements
     if (_vector.size() <= 5)
     {
-        for (typename std::vector<int>::iterator it = _vector.begin(); it != _vector.end(); ++it)
+        for ( std::vector<int>::iterator it = _vector.begin(); it != _vector.end(); ++it)
         {
             std::cout << " " << *it;
         }
@@ -210,7 +210,7 @@ void PmergeMe::displayContainers()
     // Print the first 5 elements of the sorted container and then print [...]
     else
     {
-        typename std::vector<int>::iterator it = _vector.begin();
+         std::vector<int>::iterator it = _vector.begin();
         for (i = 0; i < 5; i++)
         {
             std::cout << " " << *it;
