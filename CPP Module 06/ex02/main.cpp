@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:03:20 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/25 15:34:07 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:48:16 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static void identify(Base& p)
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        // std::cerr << e.what() << std::endl;
     }
     try
     {
@@ -109,7 +109,7 @@ static void identify(Base& p)
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        // std::cerr << e.what() << std::endl;
     }
     try
     {
@@ -120,7 +120,7 @@ static void identify(Base& p)
     }
     catch (const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        // std::cerr << e.what() << std::endl;
     }
 }
 
