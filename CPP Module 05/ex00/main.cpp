@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:59:03 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 14:59:04 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:38:49 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int main() {
         std::cout << valid1 << valid2 << valid3;
 
         // Invalid grade scenarios
-        // try {
-        //     Bureaucrat invalid1("Invalid1", 0);
-        // } catch (const std::exception &e) {
-        //     std::cout << e.what() << std::endl;
-        // }
+        try {
+            Bureaucrat invalid1("Invalid1", 0);
+        } catch (const std::exception &e) {
+            std::cout << e.what() << std::endl;
+        }
 
-        // try {
-        //     Bureaucrat invalid2("Invalid2", 151);
-        // } catch (const std::exception &e) {
-        //     std::cout << e.what() << std::endl;
-        // }
+        try {
+            Bureaucrat invalid2("Invalid2", 151);
+        } catch (const std::exception &e) {
+            std::cout << e.what() << std::endl;
+        }
 
         // Copy constructor and assignment operator
         Bureaucrat copyValid1(valid1);
@@ -65,7 +65,7 @@ int main() {
 
         try
         {
-            valid1.decrementGrade();
+            valid1.incrementGrade();
         }
         catch (const std::exception &e)
         {
