@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:02:28 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:02:28 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:25:55 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,7 +242,8 @@ void    printChar(const std::string &literal)
 void    printInt(const std::string &literal)
 {
     double d = static_cast<double>(strtod(literal.c_str(), NULL));
-    int i = static_cast<int>(d);
+    long long int ll = static_cast<long long>(d);
+    int i = static_cast<int>(ll);
     float f = static_cast<float>(d);
 
 
@@ -252,9 +253,9 @@ void    printInt(const std::string &literal)
         std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
-    if (i > 2147483647.0)
+    if (ll > INT_MAX)
         std::cout << "int: Overflow" << std::endl;
-    else if (i < -2147483648.0)
+    else if (ll < INT_MIN)
         std::cout << "int: Underflow" << std::endl;
     else
         std::cout << "int: " << i << std::endl;
@@ -302,6 +303,7 @@ void    printInt(const std::string &literal)
 void    printFloat(const std::string &literal)
 {
     double d = static_cast<double>(strtod(literal.c_str(), NULL));
+    long long int ll = static_cast<long long>(d);
     int i = static_cast<int>(d);
     float f = static_cast<float>(d);
 
@@ -311,9 +313,9 @@ void    printFloat(const std::string &literal)
         std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
-    if (i > 2147483647.0)
+    if (ll > INT_MAX)
         std::cout << "int: Overflow" << std::endl;
-    else if (i < -2147483648.0)
+    else if (ll < INT_MIN)
         std::cout << "int: Underflow" << std::endl;
     else
         std::cout << "int: " << i << std::endl;
@@ -331,6 +333,7 @@ void    printFloat(const std::string &literal)
 void    printDouble(const std::string &literal)
 {
     double d = static_cast<double>(strtod(literal.c_str(), NULL));
+    long long int ll = static_cast<long long>(d);
     int i = static_cast<int>(d);
     float f = static_cast<float>(d);
 
@@ -340,9 +343,9 @@ void    printDouble(const std::string &literal)
         std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
-    if (i > 2147483647.0)
+    if (ll > INT_MAX)
         std::cout << "int: Overflow" << std::endl;
-    else if (i < -2147483648.0)
+    else if (ll < INT_MIN)
         std::cout << "int: Underflow" << std::endl;
     else
         std::cout << "int: " << i << std::endl;

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:02:31 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:02:31 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:21:56 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <iomanip>
 # include <string>
 # include <math.h>
+# include <climits>
 
 // Enum to determine the type of the literal
 typedef enum e_type
