@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:27 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:04:28 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:59:19 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ template <typename T>
 Array<T> &Array<T>::operator=(const Array &other)
 {
     // Check for self-assignment
-    if (this != &other) {
+    if (this != &other)
+    {
         // Delete the existing array
         delete[] data;
         // Copy the size from the other array
