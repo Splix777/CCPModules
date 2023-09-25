@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:03:20 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 17:55:21 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:34:07 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,9 @@ static void identify(Base& p)
         std::cout << "A" << std::endl;
     }
     catch (const std::exception& e)
-    {}
+    {
+        std::cerr << e.what() << std::endl;
+    }
     try
     {
         B ptr;
@@ -106,7 +108,9 @@ static void identify(Base& p)
         std::cout << "B" << std::endl;
     }
     catch (const std::exception& e)
-    {}
+    {
+        std::cerr << e.what() << std::endl;
+    }
     try
     {
         C ptr;
@@ -115,7 +119,9 @@ static void identify(Base& p)
         std::cout << "C" << std::endl;
     }
     catch (const std::exception& e)
-    {}
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
 
 int main()
@@ -140,6 +146,8 @@ int main()
             std::cout << std::endl; // Print an empty line for separation
         }
     }
+    identify(NULL); // Identify type of NULL pointer
+    identify(0);    // Identify type of NULL reference
     return (0); // Return 0 to indicate successful execution
 }
 
