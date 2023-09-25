@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:02:41 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:02:42 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:01:43 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,24 @@ int main()
     // Serialize the memory address of the 'data' object using the 'serialize' method
     uintptr_t serialized = serializer.serialize(&data);
 
+    std::cout << "Serialized value: " << serialized << std::endl;
+    std::cout << "Size of: " << sizeof(serialized) << std::endl;
+    std::cout << "Address of data: " << &data << std::endl;
+    std::cout << "Size of: " << sizeof(data) << std::endl;
+    std::cout << "Data Value: " << data.value << std::endl;
+    std::cout << "Data Character: " << data.character << std::endl;
+    std::cout << std::endl;
+
     // Deserialize the serialized value back to a Data pointer using the 'deserialize' method
     Data* deserialized = serializer.deserialize(serialized);
+
+    std::cout << "Serialized value: " << serialized << std::endl;
+    std::cout << "Size of: " << sizeof(serialized) << std::endl;
+    std::cout << "Address of data: " << &data << std::endl;
+    std::cout << "Size of: " << sizeof(data) << std::endl;
+    std::cout << "Data Value: " << data.value << std::endl;
+    std::cout << "Data Character: " << data.character << std::endl;
+    std::cout << std::endl;
 
     // Check if the deserialized pointer is equal to the address of the original 'data' object
     if (deserialized == &data)

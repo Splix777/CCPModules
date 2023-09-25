@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:01:41 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 17:39:48 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 12:05:06 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 int main()
 {
 
-    // Intern someRandomIntern;
-    // AForm* rrf;
-    // rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
-
-
-
-    
+    {
+    Intern RandomIntern;
+    AForm* rrf;
+    rrf = RandomIntern.makeForm("RobotomyRequestForm", "Bender");
+    delete rrf;
+    }
+    std::cout << std::endl;
     // Create bureaucrats
     Bureaucrat highGradeBureaucrat("HighGrade", 1);
     Bureaucrat lowGradeBureaucrat("LowGrade", 50);
