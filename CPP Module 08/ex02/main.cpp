@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:15 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 18:43:08 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:36:36 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 int main()
 {
     // PDF Provided Main
-
+    std::cout << "------------------------" << std::endl;
+    std::cout << "Main provided by the PDF" << std::endl;
+    std::cout << "------------------------" << std::endl;
     MutantStack<int> mstack;
+    std::cout << "Address of mstack: " << &mstack << std::endl;
     mstack.push(5);
     mstack.push(17);
     std::cout << mstack.top() << std::endl;
@@ -36,6 +39,7 @@ int main()
         std::cout << *it << std::endl;
         ++it;
     }
+    // To show that the stack is indeed a stack, we can also use the std::stack
     std::stack<int> s(mstack);
 
     std::cout << "------------------------------------------" << std::endl;
@@ -43,6 +47,7 @@ int main()
     std::cout << "------------------------------------------" << std::endl;
 
     std::list<int> lstack;
+    std::cout << "Address of lstack: " << &lstack << std::endl;
     lstack.push_back(5);
     lstack.push_back(17);
     std::cout << lstack.back() << std::endl;
@@ -62,8 +67,38 @@ int main()
         std::cout << *iit << std::endl;
         ++iit;
     }
-    std::list<int> e(lstack);
+    std::list<int> ss(lstack);
+    std::cout << std::endl;
 
+    std::cout << "---------------------------" << std::endl;
+    std::cout << "Testing assignment overload" << std::endl;
+    std::cout << "---------------------------" << std::endl;
 
+    MutantStack<int> mstack2 = mstack;
+    std::cout << "Address of mstack2: " << &mstack2 << std::endl;
+    MutantStack<int>::iterator it2 = mstack2.begin();
+    MutantStack<int>::iterator ite2 = mstack2.end();
+    ++it2;
+    --it2;
+    while (it2 != ite2)
+    {
+        std::cout << *it2 << std::endl;
+        ++it2;
+    }
+    std::cout << "---------------------" << std::endl;
+    std::cout << "Testing copy operator" << std::endl;
+    std::cout << "---------------------" << std::endl;
+    MutantStack<int> mstack3(mstack);
+    std::cout << "Address of mstack3: " << &mstack3 << std::endl;
+    MutantStack<int>::iterator it3 = mstack3.begin();
+    MutantStack<int>::iterator ite3 = mstack3.end();
+    ++it3;
+    --it3;
+    while (it3 != ite3)
+    {
+        std::cout << *it3 << std::endl;
+        ++it3;
+    }
+    
     return (0);
 }

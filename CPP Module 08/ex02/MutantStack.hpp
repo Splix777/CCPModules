@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:21 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 18:33:29 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:16:45 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,45 +22,45 @@
 template <typename T>
 class MutantStack : public std::stack<T>
 {
-public:
-    // Default constructor: Initializes the base std::stack<T> constructor.
-    MutantStack() : std::stack<T>() {}
+    public:
+        // Default constructor: Initializes the base std::stack<T> constructor.
+        MutantStack() : std::stack<T>() {}
 
-    // Copy constructor: Initializes the base std::stack<T> constructor using another MutantStack.
-    MutantStack(MutantStack const &other) : std::stack<T>(other) {}
+        // Copy constructor: Initializes the base std::stack<T> constructor using another MutantStack.
+        MutantStack(MutantStack const &other) : std::stack<T>(other) {}
 
-    // Assignment operator: Allows assigning one MutantStack to another.
-    MutantStack &operator=(MutantStack const &other)
-    {
-        if (this != &other)
+        // Assignment operator: Allows assigning one MutantStack to another.
+        MutantStack &operator=(MutantStack const &other)
         {
-            // Calls the base class's assignment operator to copy the contents.
-            std::stack<T>::operator=(other);
+            if (this != &other)
+            {
+                // Calls the base class's assignment operator to copy the contents.
+                std::stack<T>::operator=(other);
+            }
+            return (*this);
         }
-        return (*this);
-    }
 
-    // Destructor: Outputs a message when the MutantStack is destroyed.
-    ~MutantStack()
-    {
-        std::cout << "MutantStack destructor called!" << std::endl;
-    }
+        // Destructor: Outputs a message when the MutantStack is destroyed.
+        ~MutantStack()
+        {
+            std::cout << "MutantStack destructor called!" << std::endl;
+        }
 
-    // Define iterator and reverse_iterator types for the MutantStack.
-    typedef typename std::stack<T>::container_type::iterator iterator;
-    typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+        // Define iterator and reverse_iterator types for the MutantStack.
+        typedef typename std::stack<T>::container_type::iterator iterator;
+        typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 
-    // Returns an iterator pointing to the beginning of the underlying container.
-    iterator begin() { return (this->c.begin()); }
+        // Returns an iterator pointing to the beginning of the underlying container.
+        iterator begin() { return (this->c.begin()); }
 
-    // Returns an iterator pointing to the end of the underlying container.
-    iterator end() { return (this->c.end()); }
+        // Returns an iterator pointing to the end of the underlying container.
+        iterator end() { return (this->c.end()); }
 
-    // Returns a reverse iterator pointing to the last element of the underlying container.
-    reverse_iterator rbegin() { return (this->c.rbegin()); }
+        // Returns a reverse iterator pointing to the last element of the underlying container.
+        reverse_iterator rbegin() { return (this->c.rbegin()); }
 
-    // Returns a reverse iterator pointing to the element preceding the first element of the underlying container.
-    reverse_iterator rend() { return (this->c.rend()); }
+        // Returns a reverse iterator pointing to the element preceding the first element of the underlying container.
+        reverse_iterator rend() { return (this->c.rend()); }
 };
 
 #endif
