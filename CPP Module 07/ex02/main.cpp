@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:30 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/25 16:11:17 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/25 17:59:15 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,6 @@ int main() {
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-    }
-    
+    }    
     return (0);
 }
