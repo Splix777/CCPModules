@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:17 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 18:05:20 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:45:07 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ static void printDouble(double num)
 {
     std::cout << num * 2 << " ";
 }
+// Capitalizes a character
+static void printUpper(char c)
+{
+    if (c >= 'a' && c <= 'z')
+        std::cout << (char)(c - 32) << " ";
+    else
+        std::cout << c << " ";
+}
 
 int main() {
     int intArray[] = {1, 2, 3, 4, 5};
@@ -34,7 +42,7 @@ int main() {
     iter(doubleArray, 5, printDouble);
     std::cout << std::endl;
 
-    iter(charArray, 5, printDouble);
+    iter(charArray, 5, printUpper);
     std::cout << std::endl;
 
     iter(emptyArray, 0, printDouble);

@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:30 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/25 17:59:15 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:41:54 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,3 +137,57 @@ int main() {
     }    
     return (0);
 }
+
+// #include <iostream>
+// #include "Array.hpp"
+
+// #define MAX_VAL 750
+// int main(int, char**)
+// {
+//     Array<int> numbers(MAX_VAL);
+//     int* mirror = new int[MAX_VAL];
+//     srand(time(NULL));
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         const int value = rand();
+//         numbers[i] = value;
+//         mirror[i] = value;
+//     }
+//     //SCOPE
+//     {
+//         Array<int> tmp = numbers;
+//         Array<int> test(tmp);
+//     }
+
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         if (mirror[i] != numbers[i])
+//         {
+//             std::cerr << "didn't save the same value!!" << std::endl;
+//             return 1;
+//         }
+//     }
+//     try
+//     {
+//         numbers[-2] = 0;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+//     try
+//     {
+//         numbers[MAX_VAL] = 0;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         numbers[i] = rand();
+//     }
+//     delete [] mirror;
+//     return 0;
+// }
