@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:03 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:05:03 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:12:59 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Span::~Span()
 Span::Span(Span const &copy)
 {
     this->size = copy.size; // Copy the size from the source object
+    this->vector = copy.vector; // Copy the vector from the source object
     std::cout << "Span Copy Constructor called." << std::endl; // Print message
 }
 
@@ -42,6 +43,7 @@ Span    &Span::operator=(Span const &copy)
 {
     if (this != &copy) // Check for self-assignment
     {
+        this->vector = copy.vector; // Copy the vector from the source object
         this->size = copy.size; // Copy the size from the source object
     }
     std::cout << "Span operator overload called." << std::endl;
@@ -115,4 +117,11 @@ unsigned int Span::longestSpan() const
 unsigned int    Span::getSize() const // Return the size of the vector
 {
     return (this->size);
+}
+
+void    Span::printVector() const
+{
+    for (size_t i = 0; i < vector.size(); ++i)
+        std::cout << vector[i] << " ";
+    std::cout << std::endl;
 }

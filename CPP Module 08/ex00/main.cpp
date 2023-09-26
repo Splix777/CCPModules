@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:45 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 18:21:59 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:53:06 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,46 +19,53 @@ int main()
         // Test with std::vector
         std::vector<int> vec;
         // Fill the vector with values 0, 2, 4, 6, 8
+        std::cout << "Vector: ";
         for (int i = 0; i < 5; ++i)
+        {
             vec.push_back(i * 2);
+            std::cout << vec[i] << ' ';
+        }
+        std::cout << std::endl;
         // Find the value 4 in the vector
         int valueToFind = 4;
+        std::cout << "Value to find: " << valueToFind << std::endl;
         // Call the easyfind function template to find the value
-        std::vector<int>::iterator result = easyfind(vec, valueToFind);
-        // If the iterator returned by easyfind is not the end of the vector, the value was found
-        if (result != vec.end())
-            std::cout << "Value " << valueToFind << " found in vector at index " << std::distance(vec.begin(), result) << std::endl;
-            /*
-            *   std::distance returns the distance between two iterators.
-            *   The first argument is the iterator to the first element of the container.
-            *   The second argument is the result iterator returned by easyfind.
-            */
-        else
-            std::cout << "Value " << valueToFind << " not found in vector." << std::endl;
+        easyfind(vec, valueToFind);
 
         // Test with std::list (same as vector) to show that the function works with other containers
         std::list<int> myList;
+        std::cout << "List: ";
         for (int i = 0; i < 5; ++i)
+        {
             myList.push_back(i * 3);
+            std::cout << myList.back() << ' ';
+        }
+        std::cout << std::endl;
 
         valueToFind = 9;
-        std::list<int>::iterator listResult = easyfind(myList, valueToFind);
-        if (listResult != myList.end())
-            std::cout << "Value " << valueToFind << " found in list at position " << std::distance(myList.begin(), listResult) << std::endl;
-        else
-            std::cout << "Value " << valueToFind << " not found in list." << std::endl;
+        std::cout << "Value to find: " << valueToFind << std::endl;
+        easyfind(myList, valueToFind);
 
         // Test with std::deque (same as vector) to show that the function works with other containers
         std::deque<int> myDeque;
+        std::cout << "Deque: ";
         for (int i = 0; i < 5; ++i)
+        {
             myDeque.push_back(i * 4);
+            std::cout << myDeque.back() << ' ';
+        }
+        std::cout << std::endl;
         // We search for the value 15 which is not in the deque, so the function should throw an exception.
-        valueToFind = 4;
-        std::deque<int>::iterator dequeResult = easyfind(myDeque, valueToFind);
-        if (dequeResult != myDeque.end())
-            std::cout << "Value " << valueToFind << " found in deque at position " << std::distance(myDeque.begin(), dequeResult) << std::endl;
-        else
-            std::cout << "Value " << valueToFind << " not found in deque." << std::endl;
+        valueToFind = 12;
+        std::cout << "Value to find: " << valueToFind << std::endl;
+        easyfind(myDeque, valueToFind);
+
+        // Test with an empty container
+        std::deque<int> emptyDeque;
+        std::cout << "Empty deque:  " << std::endl;
+        valueToFind = 0;
+        std::cout << "Value to find: " << valueToFind << std::endl;
+        easyfind(emptyDeque, valueToFind);
     }
     catch (const NotFound& e)
     {

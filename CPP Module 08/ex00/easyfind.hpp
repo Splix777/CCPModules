@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:04:42 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:04:42 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:46:12 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,19 @@ public:
 // Define a function template named easyfind
 // This function takes a container 'input' of type T and an integer 'i'
 template <typename T>
-typename T::iterator easyfind(T &input, int i)
+void easyfind(T &input, int i)
 {
     // Declare an iterator of type typename T::iterator (dependent on the container's type)
-    typename T::iterator it;
-
     // Use the find algorithm to search for 'i' in the 'input' container
     // The find function returns an iterator pointing to the first occurrence of 'i'
-    it = find(input.begin(), input.end(), i);
+    typename T::iterator it = find(input.begin(), input.end(), i);
 
     // If the iterator points to the end of the container, it means 'i' was not found
     if (it == input.end())
         // Throw the NotFound exception
         throw (NotFound());
-
-    // Return the iterator pointing to the found element or the end if not found
-    return (it);
+    else
+        std::cout << "Value " << i << " found in container at index " << std::distance(input.begin(), it) << std::endl;
 }
 
 /*

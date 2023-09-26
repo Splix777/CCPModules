@@ -75,5 +75,22 @@
         "optional": "cpp",
         "ratio": "cpp",
         "stack": "cpp"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "ref.license",
+                "settings": {
+                    "foreground": "#cccccc"
+                }
+            },
+            {
+                "scope": "ref.snippet",
+                "settings": {
+                    "foreground": "#606060"
+                }
+            }
+        ],
+        "comments": ""
     }
 }

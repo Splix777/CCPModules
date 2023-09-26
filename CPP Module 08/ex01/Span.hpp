@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:08 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 18:23:12 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:12:31 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Span
         unsigned int    longestSpan() const;
         // Getters
         unsigned int    getSize() const;
+        void            printVector() const;
         // Exceptions
         class   ContainerFull : public std::exception
         {
