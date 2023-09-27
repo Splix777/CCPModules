@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 19:04:11 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:29:46 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 // Default constructor
 PmergeMe::PmergeMe() {}
 // Copy constructor
-PmergeMe::PmergeMe(PmergeMe const &copy) : size(copy.size), _vectorSortingTime(copy._vectorSortingTime), _dequeSortingTime(copy._dequeSortingTime) {}
+PmergeMe::PmergeMe(PmergeMe const &copy)
+{
+    _vector = copy._vector;
+    _deque = copy._deque;
+    _unsorted = copy._unsorted;
+    size = copy.size;
+    _vectorSortingTime = copy._vectorSortingTime;
+    _dequeSortingTime = copy._dequeSortingTime;
+}
 // Destructor
 PmergeMe::~PmergeMe() {}
 // Assignment operator overload
@@ -25,6 +33,9 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &copy)
         size = copy.size;
         _vectorSortingTime = copy._vectorSortingTime;
         _dequeSortingTime = copy._dequeSortingTime;
+        _vector = copy._vector;
+        _deque = copy._deque;
+        _unsorted = copy._unsorted;
     }
     return (*this);
 }
@@ -219,5 +230,8 @@ void PmergeMe::displayContainers()
         std::cout << " [...]";
     }
     std::cout << std::endl;
+    
+    // std::cout << "*Additional Info: Memory size of the Vector is " << sizeof(_vector) << " bytes.*" << std::endl;
+    // std::cout << "*Additional Info: Memory size of the Deque is " << sizeof(_deque) << " bytes.*" << std::endl; 
 }
 
