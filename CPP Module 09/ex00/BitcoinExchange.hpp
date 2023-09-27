@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:33 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:05:33 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:01:06 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ public:
     void trimFrontBack(std::string &s) const;
     struct tm *getTime() const;
 };
+
+bool isNumber(const std::string &s);
 
 #endif

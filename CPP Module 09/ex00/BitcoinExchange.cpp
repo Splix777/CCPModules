@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:30 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 18:47:14 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:04:45 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,7 +218,8 @@ double BitcoinExchange::validValue(const std::string &value, const std::string &
     // Check if the valuePart contains only digits and a decimal point (also allows for negative numbers for error messages)
     if (valuePart.find_first_not_of("0123456789-.") != std::string::npos)
         throw std::runtime_error("Error: value is not a number.");
-
+    if (isNumber(valuePart) == false)
+        throw std::runtime_error("Error: value is not a number.");
     // Convert value to a floating-point number
     double floatValue = strtof(valuePart.c_str(), NULL);
 
@@ -244,7 +245,6 @@ bool    BitcoinExchange::checkDateFormat(const std::string &date) const
     // Check if the date is empty or not 10 characters long
     if (date.empty() || (date.size() != 10))
         return (false);
-
     return (true);
 }
 // Trim whitespace from the front and back of a string
@@ -272,4 +272,23 @@ struct tm *BitcoinExchange::getTime() const
         throw std::runtime_error("Error: could not convert current time to tm struct.");
     // Return a pointer to the tm struct
     return (timeInfo);
+}
+
+bool isNumber(const std::string &s)
+{
+    int dotCount = 0;
+    int signCount = 0;
+    
+    for (size_t i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '-' || s[i] == '+')
+            signCount++;
+        if (s[i] == '.')
+            dotCount++;
+        if (s[i] != '-' && s[i] != '+' && s[i] != '.' && !isdigit(s[i]))
+            return (false);
+    }
+    if (dotCount > 1 || signCount > 1)
+        return (false);
+    return (true);
 }
