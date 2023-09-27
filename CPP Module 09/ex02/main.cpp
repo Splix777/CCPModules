@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:00 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/18 19:16:20 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/27 12:17:53 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 // Use the following command to test larger inputs:
 // The first integer is the number of integers to generate.
 // The second and third integers are the range of integers to generate.
-// ./PmergeMe $(jot -r 10000 1 10000000)
+// ./PmergeMe $(jot -r 10000 1 100000)
 
 /**
  * Key Takeaways:
