@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:13 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/28 12:18:13 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:36:28 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ private:
     void    mergeInsertDequeSort(std::deque<int> &arr, int left, int right);
     // Time Measurement Functions
     void    measureSortingTime();
+    // Utility Functions
     int     calculateThreshold(int size);
     bool    isSortedDeque(std::deque<int> &arr);
     bool    isSortedVector(std::vector<int> &arr);

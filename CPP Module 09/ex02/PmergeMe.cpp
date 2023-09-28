@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/28 12:32:27 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:50:26 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void PmergeMe::parseArgs(int argc, char **argv)
         // Temporary string to store the argument
         std::string temp;
         // Temporary int to store the argument
-        int num;
+        unsigned int num;
 
         // Parse the argument
         ss >> temp;
@@ -68,11 +68,17 @@ void PmergeMe::parseArgs(int argc, char **argv)
             throw std::invalid_argument("Invalid argument: " + temp);
         // Convert the argument to an int
         num = std::atoi(temp.c_str());
-        // Add the int to the unsorted container
+        if (num > INT_MAX)
+            throw std::invalid_argument("Invalid argument: " + temp);
+        // Add the int to the unsorted containers
         _vector.push_back(num);
         _deque.push_back(num);
         _unsorted.push_back(num);
     }
+    if (_unsorted.size() <= 1)
+        throw std::invalid_argument("Less than 2 elements provided");
+    if (isSortedDeque(_unsorted) == true)
+        throw std::invalid_argument("The provided sequence is already sorted");
 }
 
 void PmergeMe::mergeVector(std::vector<int>& arr, int left, int mid, int right) {
@@ -312,26 +318,24 @@ int PmergeMe::calculateThreshold(int threshold)
 
 bool PmergeMe::isSortedVector(std::vector<int> &arr)
 {
-    for (std::vector<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+    for (std::vector<int>::iterator it = arr.begin(); it != arr.end() - 1; ++it)
     {
-        if (it > (it + 1))
+        if (*it > *(it + 1))
         {
-            std::cout << "Not sorted" << std::endl;
-            return (false);
+            return false;
         }
     }
-    return (true);
+    return true;
 }
 
 bool PmergeMe::isSortedDeque(std::deque<int> &arr)
 {
-    for (std::deque<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+    for (std::deque<int>::iterator it = arr.begin(); it != arr.end() - 1; ++it)
     {
-        if (it > (it + 1))
+        if (*it > *(it + 1))
         {
-            std::cout << "Not sorted" << std::endl;
-            return (false);
+            return false;
         }
     }
-    return (true);
+    return true;
 }
