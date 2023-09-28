@@ -6,14 +6,14 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/28 12:50:26 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:52:55 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
-// Default constructor
+
 PmergeMe::PmergeMe() {}
-// Copy constructor
+
 PmergeMe::PmergeMe(PmergeMe const &copy)
 {
     _vector = copy._vector;
@@ -23,9 +23,9 @@ PmergeMe::PmergeMe(PmergeMe const &copy)
     _vectorSortingTime = copy._vectorSortingTime;
     _dequeSortingTime = copy._dequeSortingTime;
 }
-// Destructor
+
 PmergeMe::~PmergeMe() {}
-// Assignment operator overload
+
 PmergeMe &PmergeMe::operator=(PmergeMe const &copy)
 {
     if (this != &copy)
@@ -39,7 +39,7 @@ PmergeMe &PmergeMe::operator=(PmergeMe const &copy)
     }
     return (*this);
 }
-// Constructor with arguments
+
 PmergeMe::PmergeMe(int argc, char **argv)
 {
     // Check if there are any arguments
@@ -48,7 +48,7 @@ PmergeMe::PmergeMe(int argc, char **argv)
     size = argc - 1;
     parseArgs(argc, argv);
 }
-// Parse the arguments
+
 void PmergeMe::parseArgs(int argc, char **argv)
 {
     // Iterate through the arguments
