@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:05:48 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/28 12:58:18 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:50:33 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,20 @@ RPN::RPN(const std::string &expres) : expression(expres) {}
 
 bool    RPN::isNumber(const std::string &str)
 {
+    int operand = 0;
     for (size_t i = 0; i < str.length(); i++)
     {
-        if (isdigit(str[i]) == false)
+        if (isdigit(str[i]) == false && str[i] != '-')
             return (false);
+        if (str[i] == '-' && i != 0)
+            return (false);
+        if (str[i] == '-' && i == 0 && str.length() == 1)
+            return (false);
+        if (str[i] == '-' && i == 0)
+            operand++;
     }
+    if (operand > 1)
+        return (false);
     return (true);
 }
 
@@ -92,7 +101,7 @@ bool RPN::evaluate()
             int resultValue = this->performOperation(operand1, operand2, token);
 
             // Uncomment this line to see the operation being performed
-            // std::cout << "Operation: " << operand1 << " " << token << " " << operand2 << " = " << resultValue << std::endl;
+            std::cout << "Operation: " << operand1 << " " << token << " " << operand2 << " = " << resultValue << std::endl;
 
             // Push the result onto the back of the list
             this->operands.push_back(resultValue);
