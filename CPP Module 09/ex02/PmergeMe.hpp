@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:13 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/12 15:06:14 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:18:13 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,18 @@ private:
     // Member Functions
     void    parseArgs(int argc, char **argv);
     // Sorting Functions
-    template <typename Container>
-    void    mergeVectorSort(Container &container);
+    void    mergeVector(std::vector<int> &arr, int left, int mid, int right);
+    void    insertionSortVector(std::vector<int> &arr, int left, int right);    
+    void    mergeInsertVectorSort(std::vector<int> &arr, int left, int right);
     // Sorting Functions
-    template <typename Container>
-    void    mergeDequeSort(Container &container);
+    void    mergeDeque(std::deque<int> &arr, int left, int mid, int right);
+    void    insertionSortDeque(std::deque<int> &arr, int left, int right);
+    void    mergeInsertDequeSort(std::deque<int> &arr, int left, int right);
     // Time Measurement Functions
-    template <typename Container>
-    void    measureSortingTime(Container &container);
+    void    measureSortingTime();
+    int     calculateThreshold(int size);
+    bool    isSortedDeque(std::deque<int> &arr);
+    bool    isSortedVector(std::vector<int> &arr);
 
 public:
     // Constructors

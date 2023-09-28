@@ -6,7 +6,7 @@
 /*   By: fsalazar <fsalazar@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:06:10 by fsalazar          #+#    #+#             */
-/*   Updated: 2023/09/27 16:29:46 by fsalazar         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:32:27 by fsalazar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,120 +69,192 @@ void PmergeMe::parseArgs(int argc, char **argv)
         // Convert the argument to an int
         num = std::atoi(temp.c_str());
         // Add the int to the unsorted container
+        _vector.push_back(num);
+        _deque.push_back(num);
         _unsorted.push_back(num);
     }
 }
-// Template function to sort a container. We use a template function so that we can use the same function for both std::vector and std::deque.
-/*
-    *   std::upper_bound is a standard library function that performs a binary
-        search in a sorted range (in this case, the _vector container) to find
-        the position where a specified element (*it) should be inserted while
-        maintaining the sorted order.
-    *   _vector.begin() and _vector.end() define the range within which the
-        binary search is performed, which is the entire _vector container.
-    *   The result of std::upper_bound is an iterator pointing to the position
-        where the element should be inserted.
-    *   We use std::vector::insert to insert the element at the found position.
-    *   Since _vector is a std::vector, it supports efficient insertion at
-        specific positions due to its underlying dynamic array structure.
-        The insert function inserts the element at the specified position and
-        shifts the subsequent elements, if necessary, to make room for the
-        new element while maintaining the sorted order.
-    *   This is why you see the sorting time for std::vector is much faster
-        than that of std::deque.
-*/
-template <typename Container>
-void PmergeMe::mergeVectorSort(Container &container)
-{
-    // Iterate through the container. Since we are using a template function, we need to use typename to tell the compiler that Container::iterator is a type.
-    for (typename Container::iterator it = container.begin(); it != container.end(); ++it)
-    {
-        // Find the insertion point in the sorted portion of the vector
-        typename std::vector<int>::iterator insertionPoint = std::upper_bound(_vector.begin(), _vector.end(), *it);
 
-        // Insert the element at the found position
-        _vector.insert(insertionPoint, *it);
+void PmergeMe::mergeVector(std::vector<int>& arr, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    std::vector<int> leftSubvec(n1);
+    std::vector<int> rightSubvec(n2);
+
+    for (int i = 0; i < n1; i++)
+        leftSubvec[i] = arr[left + i];
+    for (int i = 0; i < n2; i++)
+        rightSubvec[i] = arr[mid + 1 + i];
+
+    int i = 0, j = 0, k = left;
+
+    while (i < n1 && j < n2) {
+        if (leftSubvec[i] <= rightSubvec[j]) {
+            arr[k] = leftSubvec[i];
+            i++;
+        } else {
+            arr[k] = rightSubvec[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = leftSubvec[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = rightSubvec[j];
+        j++;
+        k++;
     }
 }
-// Template function to sort a container. We use a template function so that we can use the same function for both std::vector and std::deque.
-/*
-    *   std::upper_bound is a standard library function that performs a binary
-        search in a sorted range (in this case, the _deque container) to find
-        the position where a specified element (*it) should be inserted while
-        maintaining the sorted order.
-    *   _deque.begin() and _deque.end() define the range within which the
-        binary search is performed, which is the entire _deque container.
-    *   The result of std::upper_bound is an iterator pointing to the position
-        where the element should be inserted.
-    *   We use std::deque::insert to insert the element at the found position.
-    *   Since _deque is a std::deque, it does not support efficient insertion
-        at specific positions due to its underlying doubly-linked list structure.
-        The insert function inserts the element at the specified position and
-        shifts the subsequent elements, if necessary, to make room for the
-        new element while maintaining the sorted order.
-    *   This is why you see the sorting time for std::deque is much slower
-        than that of std::vector.
-*/
-template <typename Container>
-void PmergeMe::mergeDequeSort(Container &container)
-{
-    for (typename Container::iterator it = container.begin(); it != container.end(); ++it)
-    {
-        // Find the insertion point in the sorted portion of the vector
-        typename std::deque<int>::iterator insertionPoint = std::upper_bound(_deque.begin(), _deque.end(), *it);
 
-        // Insert the element at the found position
-        _deque.insert(insertionPoint, *it);
+void PmergeMe::insertionSortVector(std::vector<int> &arr, int left, int right)
+{
+    for (int i = left + 1; i <= right; i++)
+    {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= left && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }    
+}
+
+void PmergeMe::mergeInsertVectorSort(std::vector<int> &arr, int left, int right)
+{
+    if  (left < right)
+    {
+        if (right - left + 1 <= calculateThreshold(right - left + 1))
+        {
+            insertionSortVector(arr, left, right);
+        }
+        else
+        {
+            int mid = left + (right - left) / 2;
+            mergeInsertVectorSort(arr, left, mid);
+            mergeInsertVectorSort(arr, mid + 1, right);
+            mergeVector(arr, left, mid, right);
+        }
     }
 }
-// Template function to measure the sorting time for a container. We use a template function so that we can use the same function for both std::vector and std::deque.
-/*
-    *   clock_t is a type that stores the number of clock ticks.
-    *   clock() is a standard library function that returns the number of
-        clock ticks since the program started.
-    *   CLOCKS_PER_SEC is a standard library macro that defines the number of
-        clock ticks per second.
-    *   We use clock() to get the number of clock ticks before and after the
-        sorting operation and then calculate the elapsed time.
-    *   We multiply the elapsed time by 1000000.0 to convert it to microseconds.
-*/
-template <typename Container>
-void PmergeMe::measureSortingTime(Container &container)
+
+void PmergeMe::mergeDeque(std::deque<int>& arr, int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    std::deque<int> leftSubvec(n1);
+    std::deque<int> rightSubvec(n2);
+
+    for (int i = 0; i < n1; i++)
+        leftSubvec[i] = arr[left + i];
+    for (int i = 0; i < n2; i++)
+        rightSubvec[i] = arr[mid + 1 + i];
+
+    int i = 0, j = 0, k = left;
+
+    while (i < n1 && j < n2) {
+        if (leftSubvec[i] <= rightSubvec[j]) {
+            arr[k] = leftSubvec[i];
+            i++;
+        } else {
+            arr[k] = rightSubvec[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = leftSubvec[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = rightSubvec[j];
+        j++;
+        k++;
+    }
+}
+
+void PmergeMe::insertionSortDeque(std::deque<int> &arr, int left, int right)
+{
+    for (int i = left + 1; i <= right; i++)
+    {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= left && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }    
+}
+
+void PmergeMe::mergeInsertDequeSort(std::deque<int> &arr, int left, int right)
+{
+    if  (left < right)
+    {
+        if (right - left + 1 <= calculateThreshold(right - left + 1))
+        {
+            insertionSortDeque(arr, left, right);
+        }
+        else
+        {
+            int mid = left + (right - left) / 2;
+            mergeInsertDequeSort(arr, left, mid);
+            mergeInsertDequeSort(arr, mid + 1, right);
+            mergeDeque(arr, left, mid, right);
+        }
+    }
+}
+
+void PmergeMe::measureSortingTime()
 {
     // Start the clock
-    clock_t start = clock();
+    clock_t vstart = clock();
     // Call mergeVectorSort to perform the sorting
-    mergeVectorSort(container);
+    mergeInsertVectorSort(_vector, 0, _vector.size() - 1);
     // Stop the clock
-    clock_t end = clock();
+    clock_t vend = clock();
     // Calculate the elapsed time
-    double elapsedTime = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0; // Convert to microseconds
+    double elapsedTime = static_cast<double>(vend - vstart) / CLOCKS_PER_SEC * 1000000.0; // Convert to microseconds
     // Store the elapsed time
     _vectorSortingTime = elapsedTime;
 
     // Start the clock
-    start = clock();
+    clock_t dstart = clock();
     // Call mergeVectorSort to perform the sorting
-    mergeDequeSort(container);
+    mergeInsertDequeSort(_deque, 0, _deque.size() - 1);
     // Stop the clock
-    end = clock();
+    clock_t dend = clock();
     // Calculate the elapsed time
-    elapsedTime = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1000000.0; // Convert to microseconds
+    elapsedTime = static_cast<double>(dend - dstart) / CLOCKS_PER_SEC * 1000000.0; // Convert to microseconds
     // Store the elapsed time
     _dequeSortingTime = elapsedTime;
 }
-// Run the sorting and display the sorted container along with sorting time
+
 void PmergeMe::run()
 {
     // Perform sorting and measure time
-    measureSortingTime(_unsorted);
+    measureSortingTime();
+    if (!isSortedDeque(_deque) || !isSortedVector(_vector))
+        std::cout << "Failed to sort the arrays!" << std::endl;
     // Display the before and after containers
     displayContainers();
     // Display the sorting time for each type of container
     std::cout << "Time to process a range of " << size << " elements with std::vector : " << _vectorSortingTime << " us" << std::endl;
     std::cout << "Time to process a range of " << size << " elements with std::deque : " << _dequeSortingTime << " us" << std::endl;
 }
-// Display the before and after containers
+
 void PmergeMe::displayContainers()
 {
     int i;
@@ -199,7 +271,7 @@ void PmergeMe::displayContainers()
     // Print the first 5 elements of the unsorted container and then print [...]
     else
     {
-         std::deque<int>::iterator it = _unsorted.begin();
+        std::deque<int>::iterator it = _unsorted.begin();
         for (i = 0; i < 5; i++)
         {
             std::cout << " " << *it;
@@ -231,7 +303,35 @@ void PmergeMe::displayContainers()
     }
     std::cout << std::endl;
     
-    // std::cout << "*Additional Info: Memory size of the Vector is " << sizeof(_vector) << " bytes.*" << std::endl;
-    // std::cout << "*Additional Info: Memory size of the Deque is " << sizeof(_deque) << " bytes.*" << std::endl; 
 }
 
+int PmergeMe::calculateThreshold(int threshold)
+{
+    return (std::max(10, threshold / 10));
+}
+
+bool PmergeMe::isSortedVector(std::vector<int> &arr)
+{
+    for (std::vector<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+    {
+        if (it > (it + 1))
+        {
+            std::cout << "Not sorted" << std::endl;
+            return (false);
+        }
+    }
+    return (true);
+}
+
+bool PmergeMe::isSortedDeque(std::deque<int> &arr)
+{
+    for (std::deque<int>::iterator it = arr.begin(); it != arr.end(); ++it)
+    {
+        if (it > (it + 1))
+        {
+            std::cout << "Not sorted" << std::endl;
+            return (false);
+        }
+    }
+    return (true);
+}
