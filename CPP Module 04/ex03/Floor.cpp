@@ -15,7 +15,10 @@ Floor::~Floor()
     for (int i = 0; i < MAX_FLOOR_ITEMS; i++)
     {
         if (_inventory[i])
+        {
             delete _inventory[i];
+            _inventory[i] = NULL;
+        }
     }
 }
 
@@ -36,7 +39,10 @@ void    Floor::dropItem(AMateria *m, ICharacter &target)
         }
     }
     else
-        std::cout << "The floor is full! Can't drop any more Materia!" << std::endl;
+    {
+        std::cout << "The floor is full! Can't drop any more Materia! Materia was destroyed!" << std::endl;
+        delete m;
+    }
 }
 
 void    Floor::pickUpItem(std::string const &itemName, ICharacter &target)
@@ -45,10 +51,10 @@ void    Floor::pickUpItem(std::string const &itemName, ICharacter &target)
     {
         if (_inventory[i] && _inventory[i]->getType() == itemName)
         {
+            std::cout << "Picked up " << itemName << " from the floor!" << std::endl;
             target.equip(_inventory[i]);
             _inventory[i] = NULL;
             _nbItems--;
-            std::cout << "Picked up " << itemName << " from the floor!" << std::endl;
             return ;
         }
     }

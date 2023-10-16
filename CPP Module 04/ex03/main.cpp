@@ -183,6 +183,7 @@ int	main()
 		Warlock.use(0, Bob);
 		Warlock.use(1, Bob);
 		Warlock.pickUpFromFloor("cure");
+		Warlock.pickUpFromFloor("ice");
 		Warlock.use(1, Bob);
 		std::cout << std::endl;
 	}

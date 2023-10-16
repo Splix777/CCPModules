@@ -70,7 +70,7 @@ void Character::equip(AMateria* m)
 		if (_inventory[i]->getType() == m->getType())
 		{
 			std::cout << _name << " already has " << m->getType() << " equiped!" << std::endl;
-			delete m;
+			_floor.dropItem(m, *this);
 			return ;
 		}
 		i++;
@@ -78,7 +78,7 @@ void Character::equip(AMateria* m)
 	if (i == 4)
 	{
 		std::cout << _name << ": inventory is full, can't equip " << m->getType() << std::endl;
-		delete m;
+		_floor.dropItem(m, *this);
 		return ;
 	}
 	_inventory[i] = m;
