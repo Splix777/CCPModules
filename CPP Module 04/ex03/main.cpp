@@ -151,6 +151,12 @@ int	main()
 		// Unequip a Materia
 		Warlock.unequip(0);
 		Warlock.unequip(1);
+		Bob.unequip(0);
+		Bob.unequip(1);
+		std::cout << std::endl;
+
+		// See the Character's inventory and floor items
+		Warlock.printInventory();
 		std::cout << std::endl;
 
 		// Unequip a Materia that doesn't exist
@@ -176,8 +182,9 @@ int	main()
 		// Use a Materia that has been unequipped
 		Warlock.use(0, Bob);
 		Warlock.use(1, Bob);
+		Warlock.pickUpFromFloor("cure");
+		Warlock.use(1, Bob);
 		std::cout << std::endl;
-		
 	}
 
 	return (0);

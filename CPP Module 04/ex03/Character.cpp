@@ -1,5 +1,7 @@
 #include "Character.hpp"
 
+Floor Character::_floor;
+
 Character::Character(std::string name) : _name(name)
 {
 	std::cout << _name << ": Just another boring day!" << std::endl;
@@ -14,7 +16,10 @@ Character::~Character()
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i])
+		{
 			delete _inventory[i];
+			_inventory[i] = NULL;
+		}
 	}
 	std::cout << _name << ": My work here is done!" << std::endl;
 }

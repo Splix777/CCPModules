@@ -42,7 +42,10 @@ MateriaSource::~MateriaSource()
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->_inventory[i])
+		{
 			delete this->_inventory[i];
+			this->_inventory[i] = NULL;
+		}
 	}
 	std::cout << "Materia source was destroyed" << std::endl;
 }
